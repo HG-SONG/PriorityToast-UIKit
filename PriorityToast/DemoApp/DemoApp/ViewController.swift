@@ -62,7 +62,7 @@ class ViewController: UIViewController {
             showHighestCustomToastButton.topAnchor.constraint(equalTo: showLowToastButton.bottomAnchor,constant: 20),
             showHighestCustomToastButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             showHighestCustomToastButton.heightAnchor.constraint(equalToConstant: 44),
-            showHighestCustomToastButton.widthAnchor.constraint(equalToConstant: 160)
+            showHighestCustomToastButton.widthAnchor.constraint(equalToConstant: 250)
             
             
         ])
@@ -96,7 +96,7 @@ class ViewController: UIViewController {
         toastView.setAccessoryView(UIImageView(image: UIImage.remove))
         
         let toast = ToastItem(
-            message: "Show Highest Custom Toast",
+            message: "Show The Highest Custom Toast",
             priority: .highest,
             view: toastView
         )
