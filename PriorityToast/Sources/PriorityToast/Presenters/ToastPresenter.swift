@@ -38,7 +38,7 @@ final class ToastPresenter {
             toastView.bottomAnchor.constraint(equalTo: vc.view.safeAreaLayoutGuide.bottomAnchor, constant: -40)
         ])
 
-        toastView.showAnimation {
+        toastView.showAnimation(duration: item.duration) {
             DispatchQueue.main.asyncAfter(deadline: .now() + item.duration) {
                 toastView.dismissAnimation {
                     window.isHidden = true

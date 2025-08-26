@@ -11,11 +11,16 @@ public final class DefaultToastView: UIView, ToastViewProtocol {
     private let container = UIStackView()
     private let messageLabel = UILabel()
     private var style: ToastStyle = DefaultToastStyle()
-    private var accessoryView: UIView? = nil
+    private var accessoryView: UIView?
 
     public init(style: ToastStyle = DefaultToastStyle()) {
         super.init(frame: .zero)
         self.style = style
+        self.accessoryView = CircularProgressView(
+            progressColor: style.accessoryColor,
+            backgroundColor: .clear,
+            lineWidth: 3
+        )
         setupUI()
     }
     
@@ -45,7 +50,7 @@ public final class DefaultToastView: UIView, ToastViewProtocol {
         messageLabel.textColor = style.textColor
         
         if let accessory = accessoryView {
-            configureAccessoryView(accessory)
+            setAccessoryView(accessory)
         }
 
         container.addArrangedSubview(messageLabel)
@@ -59,12 +64,14 @@ public final class DefaultToastView: UIView, ToastViewProtocol {
         ])
     }
 
-    public func setAccessoryView(_ view: UIView) {
+    public func setAccessoryView(_ view: UIView?) {
         if let old = accessoryView {
             container.removeArrangedSubview(old)
             old.removeFromSuperview()
         }
         accessoryView = view
+        guard let view = view else { return }
+        
         configureAccessoryView(view)
         container.insertArrangedSubview(view, at: 0)
     }
@@ -84,12 +91,17 @@ public final class DefaultToastView: UIView, ToastViewProtocol {
 
     public func configure(with item: ToastItem) { messageLabel.text = item.message }
     
-    public func showAnimation(completion: @escaping () -> Void) {
+    public func showAnimation(duration: TimeInterval, completion: @escaping () -> Void) {
         alpha = 0
         transform = CGAffineTransform(translationX: 0, y: 20)
+        if let circularView = self.accessoryView as? CircularProgressView {
+            circularView.startAnimation(duration: duration, from: 0.0, to: 1.0)
+        }
+        
         UIView.animate(withDuration: 0.3, animations: {
             self.alpha = 1
             self.transform = .identity
+            
         }, completion: { _ in completion() })
     }
     
