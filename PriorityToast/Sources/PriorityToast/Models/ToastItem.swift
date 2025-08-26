@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 public struct ToastItem {
     public let id = UUID()
     public let message: String
@@ -18,7 +19,7 @@ public struct ToastItem {
         message: String,
         priority: ToastPriority,
         duration: TimeInterval = 2.0,
-        view: ToastViewProtocol
+        view: ToastViewProtocol = DefaultToastView()
     ) {
         self.message = message
         self.priority = priority
