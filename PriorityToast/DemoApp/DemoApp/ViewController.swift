@@ -11,9 +11,25 @@ import PriorityToast
 class ViewController: UIViewController {
     private let prioirtyToastManager = PriorityToastManager.shared
     
-    private let showToastButton: UIButton = {
+    private let showHighToastButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Show Toast", for: .normal)
+        button.setTitle("Show High Toast", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 18, weight: .medium)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    private let showLowToastButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Show Low Toast", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 18, weight: .medium)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    private let showHighestCustomToastButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Show Highest Custom Toast", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .medium)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -27,24 +43,64 @@ class ViewController: UIViewController {
     }
     
     private func setupButton() {
-        view.addSubview(showToastButton)
+        view.addSubview(showHighToastButton)
+        view.addSubview(showLowToastButton)
+        view.addSubview(showHighestCustomToastButton)
         
         // AutoLayout
         NSLayoutConstraint.activate([
-            showToastButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            showToastButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            showToastButton.heightAnchor.constraint(equalToConstant: 44),
-            showToastButton.widthAnchor.constraint(equalToConstant: 160)
+            showHighToastButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            showHighToastButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            showHighToastButton.heightAnchor.constraint(equalToConstant: 44),
+            showHighToastButton.widthAnchor.constraint(equalToConstant: 160),
+            
+            showLowToastButton.topAnchor.constraint(equalTo: showHighToastButton.bottomAnchor,constant: 20),
+            showLowToastButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            showLowToastButton.heightAnchor.constraint(equalToConstant: 44),
+            showLowToastButton.widthAnchor.constraint(equalToConstant: 160),
+            
+            showHighestCustomToastButton.topAnchor.constraint(equalTo: showLowToastButton.bottomAnchor,constant: 20),
+            showHighestCustomToastButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            showHighestCustomToastButton.heightAnchor.constraint(equalToConstant: 44),
+            showHighestCustomToastButton.widthAnchor.constraint(equalToConstant: 160)
+            
+            
         ])
         
-        showToastButton.addTarget(self, action: #selector(showToastTapped), for: .touchUpInside)
+        showHighToastButton.addTarget(self, action: #selector(showHighToastTapped), for: .touchUpInside)
+        showLowToastButton.addTarget(self, action: #selector(showLowToastTapped), for: .touchUpInside)
+        showHighestCustomToastButton.addTarget(self, action: #selector(showHighesCustomToastTapped), for: .touchUpInside)
     }
     
-    @objc private func showToastTapped() {
+    @objc private func showHighToastTapped() {
         let toast = ToastItem(
-            message: "토스토스토스토스토스트",
-            priority: .highest
+            message: "Show High Toast",
+            priority: .high
         )
+        prioirtyToastManager.configure(policy: .discard)
+        prioirtyToastManager.show(toast)
+    }
+    
+    @objc private func showLowToastTapped() {
+        let toast = ToastItem(
+            message: "Show Low Toast",
+            priority: .low
+        )
+        prioirtyToastManager.configure(policy: .discard)
+        prioirtyToastManager.show(toast)
+    }
+    
+    @objc private func showHighesCustomToastTapped() {
+        let style = DefaultToastStyle(backgroundColor: .white, borderColor: .red, accessoryColor: .red, textColor: .red)
+        let toastView = DefaultToastView(style: style)
+        toastView.setAccessoryView(UIImageView(image: UIImage.remove))
+        
+        let toast = ToastItem(
+            message: "Show Highest Custom Toast",
+            priority: .highest,
+            view: toastView
+        )
+        
         prioirtyToastManager.configure(policy: .discard)
         prioirtyToastManager.show(toast)
     }
