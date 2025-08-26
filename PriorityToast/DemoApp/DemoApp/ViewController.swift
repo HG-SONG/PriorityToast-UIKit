@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     
     private let showHighToastButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Show High Toast", for: .normal)
+        button.setTitle("Show High Toast(Default)", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .medium)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     
     private let showLowToastButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Show Low Toast", for: .normal)
+        button.setTitle("Show Low Toast(No Accessory)", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .medium)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -52,17 +52,14 @@ class ViewController: UIViewController {
             showHighToastButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             showHighToastButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             showHighToastButton.heightAnchor.constraint(equalToConstant: 44),
-            showHighToastButton.widthAnchor.constraint(equalToConstant: 160),
             
             showLowToastButton.topAnchor.constraint(equalTo: showHighToastButton.bottomAnchor,constant: 20),
             showLowToastButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             showLowToastButton.heightAnchor.constraint(equalToConstant: 44),
-            showLowToastButton.widthAnchor.constraint(equalToConstant: 160),
             
             showHighestCustomToastButton.topAnchor.constraint(equalTo: showLowToastButton.bottomAnchor,constant: 20),
             showHighestCustomToastButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            showHighestCustomToastButton.heightAnchor.constraint(equalToConstant: 44),
-            showHighestCustomToastButton.widthAnchor.constraint(equalToConstant: 250)
+            showHighestCustomToastButton.heightAnchor.constraint(equalToConstant: 44)
             
             
         ])
@@ -86,6 +83,9 @@ class ViewController: UIViewController {
             message: "Show Low Toast",
             priority: .low
         )
+        
+        toast.view.setAccessoryView(nil)
+        
         prioirtyToastManager.configure(policy: .discard)
         prioirtyToastManager.show(toast)
     }
