@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E4D62CAA2E5D9218003EA033 /* PriorityToast in Frameworks */ = {isa = PBXBuildFile; productRef = E4D62CA92E5D9218003EA033 /* PriorityToast */; };
+		E44B9C032E5DB03000C77241 /* PriorityToast in Frameworks */ = {isa = PBXBuildFile; productRef = E44B9C022E5DB03000C77241 /* PriorityToast */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4D62CAA2E5D9218003EA033 /* PriorityToast in Frameworks */,
+				E44B9C032E5DB03000C77241 /* PriorityToast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +83,7 @@
 			);
 			name = DemoApp;
 			packageProductDependencies = (
-				E4D62CA92E5D9218003EA033 /* PriorityToast */,
+				E44B9C022E5DB03000C77241 /* PriorityToast */,
 			);
 			productName = DemoApp;
 			productReference = E49082642E5D871E005F9807 /* DemoApp.app */;
@@ -114,7 +114,7 @@
 			mainGroup = E490825B2E5D871E005F9807;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				E4D62CA82E5D9218003EA033 /* XCLocalSwiftPackageReference "../../PriorityToast" */,
+				E44B9C012E5DB03000C77241 /* XCLocalSwiftPackageReference "../PriorityToast" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E49082652E5D871E005F9807 /* Products */;
@@ -356,14 +356,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		E4D62CA82E5D9218003EA033 /* XCLocalSwiftPackageReference "../../PriorityToast" */ = {
+		E44B9C012E5DB03000C77241 /* XCLocalSwiftPackageReference "../PriorityToast" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = ../../PriorityToast;
+			relativePath = ../PriorityToast;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E4D62CA92E5D9218003EA033 /* PriorityToast */ = {
+		E44B9C022E5DB03000C77241 /* PriorityToast */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = PriorityToast;
 		};
