@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E43B9FFE2E5EF9C300E4D6CC /* PriorityToast in Frameworks */ = {isa = PBXBuildFile; productRef = E43B9FFD2E5EF9C300E4D6CC /* PriorityToast */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		E49082642E5D871E005F9807 /* DemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E43B9FFE2E5EF9C300E4D6CC /* PriorityToast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,7 @@
 			);
 			name = DemoApp;
 			packageProductDependencies = (
+				E43B9FFD2E5EF9C300E4D6CC /* PriorityToast */,
 			);
 			productName = DemoApp;
 			productReference = E49082642E5D871E005F9807 /* DemoApp.app */;
@@ -108,6 +114,7 @@
 			mainGroup = E490825B2E5D871E005F9807;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
+				E43B9FFC2E5EF9C300E4D6CC /* XCLocalSwiftPackageReference "../../PriorityToast-UIKit" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E49082652E5D871E005F9807 /* Products */;
@@ -347,6 +354,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		E43B9FFC2E5EF9C300E4D6CC /* XCLocalSwiftPackageReference "../../PriorityToast-UIKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../PriorityToast-UIKit";
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E43B9FFD2E5EF9C300E4D6CC /* PriorityToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PriorityToast;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E490825C2E5D871E005F9807 /* Project object */;
 }
