@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E4FFCB652E5ECBC500DB7EF2 /* PriorityToast in Frameworks */ = {isa = PBXBuildFile; productRef = E4FFCB642E5ECBC500DB7EF2 /* PriorityToast */; };
+		E43B9FFE2E5EF9C300E4D6CC /* PriorityToast in Frameworks */ = {isa = PBXBuildFile; productRef = E43B9FFD2E5EF9C300E4D6CC /* PriorityToast */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4FFCB652E5ECBC500DB7EF2 /* PriorityToast in Frameworks */,
+				E43B9FFE2E5EF9C300E4D6CC /* PriorityToast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +83,7 @@
 			);
 			name = DemoApp;
 			packageProductDependencies = (
-				E4FFCB642E5ECBC500DB7EF2 /* PriorityToast */,
+				E43B9FFD2E5EF9C300E4D6CC /* PriorityToast */,
 			);
 			productName = DemoApp;
 			productReference = E49082642E5D871E005F9807 /* DemoApp.app */;
@@ -114,7 +114,7 @@
 			mainGroup = E490825B2E5D871E005F9807;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				E4FFCB632E5ECBC500DB7EF2 /* XCLocalSwiftPackageReference "../PriorityToast" */,
+				E43B9FFC2E5EF9C300E4D6CC /* XCLocalSwiftPackageReference "../../PriorityToast-UIKit" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E49082652E5D871E005F9807 /* Products */;
@@ -356,14 +356,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		E4FFCB632E5ECBC500DB7EF2 /* XCLocalSwiftPackageReference "../PriorityToast" */ = {
+		E43B9FFC2E5EF9C300E4D6CC /* XCLocalSwiftPackageReference "../../PriorityToast-UIKit" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = ../PriorityToast;
+			relativePath = "../../PriorityToast-UIKit";
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E4FFCB642E5ECBC500DB7EF2 /* PriorityToast */ = {
+		E43B9FFD2E5EF9C300E4D6CC /* PriorityToast */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = PriorityToast;
 		};
