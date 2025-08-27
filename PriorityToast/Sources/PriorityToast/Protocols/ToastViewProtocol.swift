@@ -10,6 +10,6 @@ import UIKit
 public protocol ToastViewProtocol: UIView {
     func setAccessoryView(_ view: UIView?)
     func configure(with item: ToastItem)
-    func showAnimation(duration: TimeInterval, completion: @escaping () -> Void)
-    func dismissAnimation(completion: @escaping () -> Void)
+    func showAnimation(duration: TimeInterval) async
+    func dismissAnimation() async
 }
