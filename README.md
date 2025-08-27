@@ -1,5 +1,7 @@
 # PriorityToast
 
+# iOS 13 + 
+
 `PriorityToast`는 iOS에서 우선순위 기반의 토스트 메시지를 표시하기 위한 라이브러리입니다.  
 `ToastManager`는 토스트 우선순위를 관리하고, `ToastPresenter`는 토스트 뷰의 표시와 애니메이션을 담당합니다.  
 
