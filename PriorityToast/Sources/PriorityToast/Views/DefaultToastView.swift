@@ -89,26 +89,35 @@ public final class DefaultToastView: UIView, ToastViewProtocol {
         ])
     }
 
-    public func configure(with item: ToastItem) { messageLabel.text = item.message }
+    public func configure(with item: ToastItem) {
+        messageLabel.text = item.message
+    }
     
-    public func showAnimation(duration: TimeInterval, completion: @escaping () -> Void) {
+    public func showAnimation(duration: TimeInterval) async {
         alpha = 0
         transform = CGAffineTransform(translationX: 0, y: 20)
         if let circularView = self.accessoryView as? CircularProgressView {
             circularView.startAnimation(duration: duration, from: 0.0, to: 1.0)
         }
-        
-        UIView.animate(withDuration: 0.3, animations: {
-            self.alpha = 1
-            self.transform = .identity
-            
-        }, completion: { _ in completion() })
+
+        await withCheckedContinuation { continuation in
+            UIView.animate(withDuration: 0.3, animations: {
+                self.alpha = 1
+                self.transform = .identity
+            }, completion: { _ in
+                continuation.resume()
+            })
+        }
     }
     
-    public func dismissAnimation(completion: @escaping () -> Void) {
-        UIView.animate(withDuration: 0.2, animations: {
-            self.alpha = 0
-            self.transform = CGAffineTransform(translationX: 0, y: 20)
-        }, completion: { _ in completion() })
+    public func dismissAnimation() async {
+        await withCheckedContinuation { continuation in
+            UIView.animate(withDuration: 0.3, animations: {
+                self.alpha = 0
+                self.transform = CGAffineTransform(translationX: 0, y: 20)
+            }, completion: { _ in
+                continuation.resume()
+            })
+        }
     }
 }
