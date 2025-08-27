@@ -55,13 +55,11 @@ ToastManager handles toast priority and queue management, while ToastPresenter i
 ---
 
 ## 🚀 Installation 
+### URL: https://github.com/HG-SONG/PriorityToast-UIKit.git
 
-```swift
-// Swift Package Manager (SPM)
-dependencies: [
-    .package(url: "https://github.com/HG-SONG/PriorityToast-UIKit.git", from: "1.0.0")
-]
-```
+Project → Package Dependencies → + 
+
+<img width="507" height="466" alt="스크린샷 2025-08-27 오후 5 59 15" src="https://github.com/user-attachments/assets/9ce0118f-e59f-4bf4-aed1-ab3a2feeaeba" />
 
 ---
 
