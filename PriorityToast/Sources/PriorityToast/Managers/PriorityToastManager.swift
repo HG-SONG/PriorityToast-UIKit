@@ -117,4 +117,19 @@ public final class PriorityToastManager {
         isPresenting = false
         currentPresentationTask = nil
     }
+    
+    // MARK: - Clear
+    public func clearAll() async {
+        // 현재 표시 중인 토스트 제거
+        currentPresentationTask?.cancel()
+        if let currentToast = currentToast {
+            await ToastPresenter.dismissToast(currentToast.id)
+        }
+        
+        // 상태 초기화
+        currentToast = nil
+        isPresenting = false
+        currentPresentationTask = nil
+        queue.removeAll()
+    }
 }
