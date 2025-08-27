@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E44B9C032E5DB03000C77241 /* PriorityToast in Frameworks */ = {isa = PBXBuildFile; productRef = E44B9C022E5DB03000C77241 /* PriorityToast */; };
+		E4FFCB652E5ECBC500DB7EF2 /* PriorityToast in Frameworks */ = {isa = PBXBuildFile; productRef = E4FFCB642E5ECBC500DB7EF2 /* PriorityToast */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E44B9C032E5DB03000C77241 /* PriorityToast in Frameworks */,
+				E4FFCB652E5ECBC500DB7EF2 /* PriorityToast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +83,7 @@
 			);
 			name = DemoApp;
 			packageProductDependencies = (
-				E44B9C022E5DB03000C77241 /* PriorityToast */,
+				E4FFCB642E5ECBC500DB7EF2 /* PriorityToast */,
 			);
 			productName = DemoApp;
 			productReference = E49082642E5D871E005F9807 /* DemoApp.app */;
@@ -114,7 +114,7 @@
 			mainGroup = E490825B2E5D871E005F9807;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				E44B9C012E5DB03000C77241 /* XCLocalSwiftPackageReference "../PriorityToast" */,
+				E4FFCB632E5ECBC500DB7EF2 /* XCLocalSwiftPackageReference "../PriorityToast" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E49082652E5D871E005F9807 /* Products */;
@@ -356,14 +356,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		E44B9C012E5DB03000C77241 /* XCLocalSwiftPackageReference "../PriorityToast" */ = {
+		E4FFCB632E5ECBC500DB7EF2 /* XCLocalSwiftPackageReference "../PriorityToast" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../PriorityToast;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E44B9C022E5DB03000C77241 /* PriorityToast */ = {
+		E4FFCB642E5ECBC500DB7EF2 /* PriorityToast */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = PriorityToast;
 		};
