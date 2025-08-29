@@ -35,8 +35,8 @@ ToastManager handles toast priority and queue management, while ToastPresenter i
 - `ToastManager` : 큐 관리 및 우선순위/새치기 판단 담당  
 - `ToastPresenter` : 실제 토스트 뷰 표시 및 Task 관리 담당  
 - 토스트별 `UUID` 기반 Task 관리 → 특정 토스트만 취소 가능  
-- `async/await` 기반 애니메이션 제어  
-- Window & RootViewController 재사용 구조 : Toast 표시 중, 화면이 전환되어도 큐에 들어간 Toast가 표시됩니다.
+- `async/await` 기반 애니메이션 제어. 타이밍이 꼬일 일 없습니다.   
+- 독립적인 window 사용 : Toast 표시 중, 화면이 전환되어도 현재 표시중인 Toast는 물론 큐에 존재하는 Toast도 맨 위 뷰 계층에 표시됩니다.
 - Policies : Discard / Requeue 
   - .discard: 새치기에 의해 사라진 toast는 버려집니다.
   - .requeue: 새치기에 의해 사라진 toast는 다시 enqueue 되며, 우선순위에 의해 정렬되어 뒤에 다시 표시됩니다.
@@ -47,7 +47,7 @@ ToastManager handles toast priority and queue management, while ToastPresenter i
 - ToastPresenter: Handles actual toast view display and task management
 - UUID-based task management per toast → Allows canceling a specific toast only
 - async/await based animation control
-- Window & RootViewController reuse: Toasts in the queue will continue to display      even if the screen changes
+- Independent window usage: Even when the screen transitions, the currently displayed Toast as well as the Toasts in the queue are shown on the topmost view hierarchy.
 - Policies: Discard / Requeue
   - .discard: Toasts dismissed due to preemption are discarded
   - .requeue: Toasts dismissed due to preemption are re-enqueued and displayed later     according to their priority
