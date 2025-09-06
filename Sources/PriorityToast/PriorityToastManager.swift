@@ -11,8 +11,8 @@ import UIKit
 public final class PriorityToastManager {
     public static let shared = PriorityToastManager()
     
-    private var currentToast: ToastItem?
-    private var queue: [ToastItem] = []
+    var currentToast: ToastItem?
+    var queue: [ToastItem] = []
     private var policy: ToastPolicy = .discard
     private var isPresenting = false
     private var currentPresentationTask: Task<Void, Never>?
@@ -49,7 +49,6 @@ public final class PriorityToastManager {
                     // 현재 토스트를 큐에 다시 넣고 새 토스트 추가
                     // Requeue current toast and add the new one
                     enqueue(toast)
-                    enqueue(current) // 현재 것 다시 큐에 (Requeue current one)
                     await dismissCurrent()
                     await presentNext()
                 }
